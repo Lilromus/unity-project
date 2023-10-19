@@ -13,11 +13,15 @@ public class PlayerMovement : MonoBehaviour
     public float checkRadius;
     public LayerMask whatIsGround;
 
+
+    private Animator anim;
+
     private bool isJumping;
 
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -25,6 +29,14 @@ public class PlayerMovement : MonoBehaviour
     {
         moveInput = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        if(moveInput == 0)
+        {
+            anim.SetBool("isRunning", false);
+        }
+        else
+        {
+            anim.SetBool("isRunning", true);
+        }
     }
 
     // Update is called once per frame
@@ -43,6 +55,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown("space") && isGrounded == true && !isJumping)
         {
             StartCoroutine(JumpWithDelay());
+            anim.SetBool("isJumping", false);
+        }
+        else
+        {
+            anim.SetBool("isJumping", true);
         }
     }
 
