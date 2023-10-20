@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4a64a20b83b6e9d4392e608d94293086
+guid: 70ecb20355c49df4dbf23ecf36a3407b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ludeker-Sheet_0
+      name: running_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7658344aaabb5764d882412c9bde7855
-      internalID: 1168601641
+      spriteID: 9cd48e18bf71e3342b42548c241b15fb
+      internalID: 1214944566
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ludeker-Sheet_1
+      name: running_1
       rect:
         serializedVersion: 2
         x: 160
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa274b34045bbc043bf3108a5cca2ee1
-      internalID: 16420769
+      spriteID: 99bde5645edf8054b976e33a11c57744
+      internalID: -1314711570
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ludeker-Sheet_2
+      name: running_2
       rect:
         serializedVersion: 2
         x: 320
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a72a2b33409a42b4e9ddbc88e21925cb
-      internalID: 1598469262
+      spriteID: 2fae4f148e88710429469e3648d843a0
+      internalID: -24978164
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ludeker-Sheet_3
+      name: running_3
       rect:
         serializedVersion: 2
         x: 480
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bfb683a5588c2f4798330cb420fe9c7
-      internalID: -482067838
+      spriteID: ac72efe3e3e4b5742bd5c5e570634ae0
+      internalID: -324117791
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ludeker-Sheet_4
+      name: running_4
       rect:
         serializedVersion: 2
         x: 640
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c42defd90c2932d4db724d0de4b7895d
-      internalID: 1740070995
+      spriteID: 251075a891174984f8824bf70e4d98c5
+      internalID: -1296154792
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ludeker-Sheet_5
+      name: running_5
       rect:
         serializedVersion: 2
         x: 800
@@ -242,8 +242,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2e20725763aedf4d8f93ca4c8482273
-      internalID: 1474129894
+      spriteID: e58241deea22da845a44f9b83929c3fa
+      internalID: -1412853478
       vertices: []
       indices: 
       edges: []
@@ -259,12 +259,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ludeker-Sheet_0: 1168601641
-      ludeker-Sheet_1: 16420769
-      ludeker-Sheet_2: 1598469262
-      ludeker-Sheet_3: -482067838
-      ludeker-Sheet_4: 1740070995
-      ludeker-Sheet_5: 1474129894
+      running_0: 1214944566
+      running_1: -1314711570
+      running_2: -24978164
+      running_3: -324117791
+      running_4: -1296154792
+      running_5: -1412853478
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
