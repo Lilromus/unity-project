@@ -12,6 +12,10 @@ public class PlayerMovement : MonoBehaviour
     private float moveSpeed = 7f;
     private float jumpForce = 14f;
 
+
+    private enum MovementState { idle, running, jumping}
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -36,20 +40,28 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateAnimationUpdate()
     {
+        MovementState state;
         if (dirX > 0f)
         {
-            anim.SetBool("running", true);
+            state = MovementState.running;
             sprite.flipX = false;
         }
         else if (dirX < 0f)
         {
-            anim.SetBool("running", true);
+            state = MovementState.running;
             sprite.flipX = true;
         }
         else
         {
-            anim.SetBool("running", false);
+            state = MovementState.idle;
         }
+        if (rb.velocity.y > .1f)
+        {
+            state = MovementState.jumping;
+        }
+
+
+        anim.SetInteger("state", (int)state);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
