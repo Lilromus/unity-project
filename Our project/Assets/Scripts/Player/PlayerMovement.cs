@@ -34,8 +34,18 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = false;
         }
 
+        if(Input.GetKeyDown(KeyCode.N)) // test health bara jesli n to bije 1 serce
+        {
+            TakeDamage(1);
+        }
+
         UpdateAnimationUpdate();
        
+    }
+
+    void TakeDamage(int damage)
+    {
+        HeartManager.health -= 1;
     }
 
     private void UpdateAnimationUpdate()
