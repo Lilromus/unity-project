@@ -30,13 +30,15 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void Die()
+    private void Die()
     {
+
 
         animator.SetBool("IsDead", true);
 
         GetComponent<Collider2D>().enabled = false;
         this.enabled = true;
+        
     }
 
     // Update is called once per frame

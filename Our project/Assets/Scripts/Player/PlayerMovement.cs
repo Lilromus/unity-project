@@ -1,56 +1,48 @@
 using System.Collections;
-using UnityEditor;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private bool isGrounded;
     private SpriteRenderer sprite;
-    private Animator anim; // Fix the typo here
-    private float dirX=0f;
-    private float moveSpeed = 7f;
-    private float jumpForce = 14f;
+    private Animator anim;
+    private BoxCollider2D coll;
+    [SerializeField] private LayerMask jumpableGround;
 
+    private float dirX = 0f;
+    [SerializeField] private float moveSpeed = 7f;
+    [SerializeField] private float jumpForce = 14f;
 
     private enum MovementState { idle, running, jumping}
-
-
+    // Start is called before the first frame update
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>(); // Fix the typo here
         sprite = GetComponent<SpriteRenderer>();
+        coll = GetComponent<BoxCollider2D>();
+        anim = GetComponent<Animator>();
     }
 
+    // Update is called once per frame
     private void Update()
     {
         dirX = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            isGrounded = false;
         }
 
-        if(Input.GetKeyDown(KeyCode.N)) // test health bara jesli n to bije 1 serce
-        {
-            TakeDamage(1);
-        }
 
-        UpdateAnimationUpdate();
-       
+        UpdateAnimationState();
     }
 
-    void TakeDamage(int damage)
-    {
-        HeartManager.health -= 1;
-    }
-
-    private void UpdateAnimationUpdate()
+    private void UpdateAnimationState()
     {
         MovementState state;
+
         if (dirX > 0f)
         {
             state = MovementState.running;
@@ -65,21 +57,17 @@ public class PlayerMovement : MonoBehaviour
         {
             state = MovementState.idle;
         }
+
         if (rb.velocity.y > .1f)
         {
             state = MovementState.jumping;
         }
 
-
         anim.SetInteger("state", (int)state);
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        isGrounded = true;
-    }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private bool IsGrounded()
     {
-        isGrounded = false;
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
 }
