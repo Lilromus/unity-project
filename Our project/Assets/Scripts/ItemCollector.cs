@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class ItemCollector : MonoBehaviour
 {
 
-    private int apples = 0;
     [SerializeField] private TextMeshProUGUI appleText;
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
@@ -14,8 +13,6 @@ public class ItemCollector : MonoBehaviour
         if(collision.gameObject.CompareTag("Apple"))
         {
             Destroy(collision.gameObject);
-            apples++;
-            appleText.text = "Apples: " + apples;
 
         }
     }
