@@ -954,7 +954,7 @@ Transform:
   m_GameObject: {fileID: 505780916}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.51, y: -0.44, z: 0}
+  m_LocalPosition: {x: 1.514, y: -0.468, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32877,7 +32877,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0053154677, y: 0.018481411}
@@ -33215,6 +33215,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 363754428386952384, guid: 7f8934adbb6490641a77c53cec2e4ad4, type: 3}
   m_PrefabInstance: {fileID: 1235451541}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &872692004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 872692005}
+  m_Layer: 9
+  m_Name: BulletPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &872692005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872692004}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.498, y: -0.138, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1850014254}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &889739120
 GameObject:
   m_ObjectHideFlags: 0
@@ -34503,7 +34534,7 @@ GameObject:
   - component: {fileID: 1291486406}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34563,7 +34594,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 3.1999998, y: 1.603125}
-    newSize: {x: 1.6, y: 1.6}
+    newSize: {x: 3.1999998, y: 1.603125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -34665,7 +34696,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.6, y: 1.6}
+  m_Size: {x: 3.1999998, y: 1.603125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -34740,6 +34771,9 @@ MonoBehaviour:
   - {fileID: 1707848230}
   fullHeart: {fileID: 21300000, guid: 475c084a8ae4d61458bb5f4dece2b310, type: 3}
   emptyHeart: {fileID: 21300000, guid: 5341582cbb6d62643901d93d52c790f0, type: 3}
+  dead: 0
+  playerRespawn: {fileID: 0}
+  respawnPoint: {fileID: 0}
 --- !u!1 &1353336825
 GameObject:
   m_ObjectHideFlags: 0
@@ -35962,6 +35996,7 @@ GameObject:
   - component: {fileID: 1850014261}
   - component: {fileID: 1850014260}
   - component: {fileID: 1850014259}
+  - component: {fileID: 1850014262}
   m_Layer: 9
   m_Name: Turret
   m_TagString: Untagged
@@ -36054,7 +36089,8 @@ Transform:
   m_LocalPosition: {x: 12.2928, y: -3.8313, z: 0.0202}
   m_LocalScale: {x: 0.84813213, y: 1.0060543, z: 0.97348}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 872692005}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -4.032, y: 4.942, z: 0.287}
 --- !u!50 &1850014255
@@ -36243,6 +36279,20 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1850014262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850014251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe3a2dde643b794aa32abfa1b7534d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 5876110262526887426, guid: c919d3d9b4b67d5458a7409c7d57507e, type: 3}
+  bulletPos: {fileID: 872692005}
 --- !u!1 &1900563774
 GameObject:
   m_ObjectHideFlags: 0
@@ -36848,7 +36898,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0053154677, y: 0.018481411}
