@@ -6,13 +6,19 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    // Start is called before the first frame update
     public int health;
     public int numOfHearts;
+    private Animator anim;
 
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
+    private bool dead;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     private void Update()
     {
@@ -46,10 +52,28 @@ public class Health : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Trap"))
         {
-            if(health > 0)
+            if (health > 0)
             {
                 health--;
+                if (anim != null)
+                {
+                    anim.SetTrigger("hurt");
+                }
+                if (health == 0)
+                {
+                    if (!dead)
+                    {
+                        if (anim != null)
+                        {
+                            anim.SetTrigger("die");
+                            GetComponent<PlayerMovement>().enabled = false;
+                            GetComponent<PlayerCombat>().enabled = false;
+                            dead = true;
+                        }
+                    }
+                }
             }
         }
     }
+
 }
