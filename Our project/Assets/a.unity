@@ -1164,7 +1164,7 @@ GameObject:
   - component: {fileID: 637325176}
   m_Layer: 8
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33428,6 +33428,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 363754428386952384, guid: 7f8934adbb6490641a77c53cec2e4ad4, type: 3}
   m_PrefabInstance: {fileID: 1121426286}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &801158835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 801158836}
+  m_Layer: 0
+  m_Name: Groun
+  m_TagString: Ground
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &801158836
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801158835}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.64, y: -4.09, z: -0.12699342}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &815915234
 GameObject:
   m_ObjectHideFlags: 0
@@ -35113,6 +35144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   numOfHearts: 3
+  anim: {fileID: 0}
   hearts:
   - {fileID: 423547269}
   - {fileID: 904622214}
@@ -37345,3 +37377,4 @@ SceneRoots:
   - {fileID: 462302320}
   - {fileID: 2222533}
   - {fileID: 383813375}
+  - {fileID: 801158836}
