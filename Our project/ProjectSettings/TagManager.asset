@@ -8,6 +8,7 @@ TagManager:
   - Trap
   - Heart
   - Ground
+  - Bullet
   layers:
   - Default
   - TransparentFX

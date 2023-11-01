@@ -15,7 +15,6 @@ public class Health : MonoBehaviour
     public Sprite emptyHeart;
     public bool dead;
 
-
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -49,7 +48,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+      private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Trap"))
         {
@@ -81,35 +80,66 @@ public class Health : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Trap"))
         {
-            if (health > 0)
+            HandleTrapCollision();
+        }
+            //HandleAnotherTrapCollision();
+            
+        
+    }
+
+    private void HandleTrapCollision()
+    {
+        if (health > 0)
+        {
+            health--;
+
+            if (anim != null)
             {
-                health--;
+                anim.SetTrigger("hurt");
+            }
+
+            if (health == 0)
+            {
+                dead = true;
+                GetComponent<PlayerMovement>().enabled = false;
+                GetComponent<PlayerCombat>().enabled = false;
 
                 if (anim != null)
                 {
-                    anim.SetTrigger("hurt");
-                }
-
-                if (health == 0)
-                {
-                    dead = true;
-                    GetComponent<PlayerMovement>().enabled = false;
-                    GetComponent<PlayerCombat>().enabled = false;
-
-                    if (anim != null)
-                    {
-                        anim.SetTrigger("die");
-                    }
+                    anim.SetTrigger("die");
                 }
             }
         }
     }
 
+    public void HandleAnotherTrapCollision()
+    {
+        if (health > 0)
+        {
+            health--;
 
+            if (anim != null)
+            {
+                anim.SetTrigger("hurt");
+            }
+
+            if (health == 0)
+            {
+                dead = true;
+                GetComponent<PlayerMovement>().enabled = false;
+                GetComponent<PlayerCombat>().enabled = false;
+
+                if (anim != null)
+                {
+                    anim.SetTrigger("die");
+                }
+            }
+        }
+        
+    }
 
     private void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
 }

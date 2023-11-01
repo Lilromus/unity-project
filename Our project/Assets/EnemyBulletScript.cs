@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class EnemyBulletScript : MonoBehaviour
 {
@@ -11,8 +10,11 @@ public class EnemyBulletScript : MonoBehaviour
     private GameObject ground;
     public float force;
     private float timer;
+    private Animator anim;
+
     void Start()
     {
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
         ground = GameObject.FindGameObjectWithTag("Ground");
@@ -22,19 +24,34 @@ public class EnemyBulletScript : MonoBehaviour
             Vector3 direction = ground.transform.position - transform.position;
             rb.velocity = direction.normalized * force;
         }
-
-       
     }
 
-
-    // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
 
-        if(timer>10)
+        if (timer > 5)
         {
             Destroy(gameObject);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Health playerHealth = other.gameObject.GetComponent<Health>();
+            if (playerHealth != null)
+            {
+                playerHealth.HandleAnotherTrapCollision();
+                Destroy(gameObject);
+            }
+        }
+        else if (other.gameObject.CompareTag("Ground"))
+        {
+            // Destroy the bullet when it collides with an object tagged as "Ground"
+            Destroy(gameObject);
+        }
+    }
+
 }
