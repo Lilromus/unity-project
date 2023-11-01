@@ -11,7 +11,7 @@ public class PlayerCombat : MonoBehaviour
     public float attackRange = 1f;
     public LayerMask enemyLayers;
     public int attackDamage = 1;
-
+    [SerializeField] private AudioSource attackSFX;
     public float attackRate = 2f;
     float nextAttackTime = 0f;
     // Start is called before the first frame update
@@ -28,6 +28,7 @@ public class PlayerCombat : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 Attack();
+                attackSFX.Play();
                 nextAttackTime = Time.time + 1f / attackRate;
             }
         }

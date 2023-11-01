@@ -6,7 +6,7 @@ public class EnemyShooting : MonoBehaviour
 {
     public GameObject bullet;
     public Transform bulletPos;
-
+    [SerializeField] private AudioSource shootingSFX;
     private float timer;
     private GameObject player;
     // Start is called before the first frame update
@@ -30,6 +30,7 @@ public class EnemyShooting : MonoBehaviour
             {
                 timer = 0;
                 shoot();
+                shootingSFX.Play();
             }
         }
     }

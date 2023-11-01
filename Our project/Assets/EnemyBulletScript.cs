@@ -11,6 +11,7 @@ public class EnemyBulletScript : MonoBehaviour
     public float force;
     private float timer;
     private Animator anim;
+    private bool destroyed;
 
     void Start()
     {
@@ -19,20 +20,32 @@ public class EnemyBulletScript : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         ground = GameObject.FindGameObjectWithTag("Ground");
 
-        if (ground != null)
+        if (ground != null && !destroyed)
         {
             Vector3 direction = ground.transform.position - transform.position;
             rb.velocity = direction.normalized * force;
         }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
+    }
+
+    public void SetDestroyed(bool value)
+    {
+        destroyed = value;
     }
 
     void Update()
     {
+        if(!destroyed)
+        {
         timer += Time.deltaTime;
 
         if (timer > 5)
         {
             Destroy(gameObject);
+        }
         }
     }
 
@@ -53,5 +66,5 @@ public class EnemyBulletScript : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
 }
+

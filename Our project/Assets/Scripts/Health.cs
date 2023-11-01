@@ -9,7 +9,8 @@ public class Health : MonoBehaviour
     public int health;
     public int numOfHearts;
     public Animator anim;
-
+    [SerializeField] private AudioSource deathSFX;
+    [SerializeField] private AudioSource hurtSFX;
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
@@ -59,6 +60,7 @@ public class Health : MonoBehaviour
                 if (anim != null)
                 {
                     anim.SetTrigger("hurt");
+                    hurtSFX.Play();
                 }
 
                 if (health == 0)
@@ -70,6 +72,7 @@ public class Health : MonoBehaviour
                     if (anim != null)
                     {
                         anim.SetTrigger("die");
+                        deathSFX.Play();
                     }
                 }
             }
@@ -96,6 +99,7 @@ public class Health : MonoBehaviour
             if (anim != null)
             {
                 anim.SetTrigger("hurt");
+                hurtSFX.Play();
             }
 
             if (health == 0)
@@ -107,6 +111,7 @@ public class Health : MonoBehaviour
                 if (anim != null)
                 {
                     anim.SetTrigger("die");
+                    deathSFX.Play();
                 }
             }
         }
@@ -121,6 +126,7 @@ public class Health : MonoBehaviour
             if (anim != null)
             {
                 anim.SetTrigger("hurt");
+                hurtSFX.Play();
             }
 
             if (health == 0)
@@ -132,6 +138,7 @@ public class Health : MonoBehaviour
                 if (anim != null)
                 {
                     anim.SetTrigger("die");
+                    deathSFX.Play();
                 }
             }
         }

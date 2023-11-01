@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public Animator animator;
     public int maxHealth = 1;
     int currentHealth;
+    public EnemyBulletScript bulletScript; // Reference to the EnemyBulletScript
 
     // Start is called before the first frame update
     void Start()
@@ -26,19 +27,24 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            
+            // Optionally, you can add logic for when the enemy is not dead yet.
         }
     }
 
     private void Die()
     {
-
-
         animator.SetBool("IsDead", true);
 
         GetComponent<Collider2D>().enabled = false;
-        this.enabled = true;
-        
+
+        // Set the 'destroyed' variable to false in the EnemyBulletScript
+        if (bulletScript != null)
+        {
+            bulletScript.SetDestroyed(false);
+        }
+
+        // Disable this script
+        this.enabled = false;
     }
 
     // Update is called once per frame

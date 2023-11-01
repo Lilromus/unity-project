@@ -7,6 +7,8 @@ public class ItemCollector : MonoBehaviour
 {
     private int apples = 0;
 
+    [SerializeField] private AudioSource CollectSFX;
+
     [SerializeField] private TextMeshProUGUI appleText;
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
@@ -14,18 +16,9 @@ public class ItemCollector : MonoBehaviour
         if (collision.gameObject.CompareTag("Apple"))
         {
             Destroy(collision.gameObject);
+            CollectSFX.Play();
             apples++;
             appleText.text = "Apples: " + apples;
-        }
-        else if (collision.gameObject.CompareTag("Heart"))
-        {
-            Health playerHealth = collision.gameObject.GetComponent<Health>();
-            if (playerHealth != null && playerHealth.health < 3)
-            {
-                playerHealth.health++;
-                Destroy(collision.gameObject);
-
-            }
         }
     }
 }
