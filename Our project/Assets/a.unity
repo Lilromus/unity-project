@@ -22856,7 +22856,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 3
-      m_TileSpriteIndex: 3
+      m_TileSpriteIndex: 18
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -30003,8 +30003,8 @@ Tilemap:
     m_Data: {fileID: 1899762116, guid: 413986c4a668c374d8de72a47621b531, type: 3}
   - m_RefCount: 15
     m_Data: {fileID: 574777595, guid: 413986c4a668c374d8de72a47621b531, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -1465368304, guid: 413986c4a668c374d8de72a47621b531, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 2524
     m_Data: {fileID: -827898494, guid: 413986c4a668c374d8de72a47621b531, type: 3}
   - m_RefCount: 20
@@ -30033,8 +30033,8 @@ Tilemap:
     m_Data: {fileID: 1249034449, guid: 413986c4a668c374d8de72a47621b531, type: 3}
   - m_RefCount: 16
     m_Data: {fileID: -2129995843, guid: 413986c4a668c374d8de72a47621b531, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -1465368304, guid: 413986c4a668c374d8de72a47621b531, type: 3}
   - m_RefCount: 5
     m_Data: {fileID: 1289115880, guid: 413986c4a668c374d8de72a47621b531, type: 3}
   - m_RefCount: 5
@@ -35120,8 +35120,6 @@ MonoBehaviour:
   fullHeart: {fileID: 21300000, guid: 475c084a8ae4d61458bb5f4dece2b310, type: 3}
   emptyHeart: {fileID: 21300000, guid: 5341582cbb6d62643901d93d52c790f0, type: 3}
   dead: 0
-  playerRespawn: {fileID: 0}
-  respawnPoint: {fileID: 0}
 --- !u!1 &1353336825
 GameObject:
   m_ObjectHideFlags: 0
