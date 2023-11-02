@@ -9,10 +9,12 @@ public class EnemyShooting : MonoBehaviour
     [SerializeField] private AudioSource shootingSFX;
     private float timer;
     private GameObject player;
+    private Enemy EnemyScript;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        EnemyScript = GetComponent<Enemy>();
     }
 
     // Update is called once per frame
@@ -22,7 +24,7 @@ public class EnemyShooting : MonoBehaviour
 
         float distance = Vector2.Distance(transform.position, player.transform.position);
 
-        if (distance < 10)
+        if (distance < 10 && !EnemyScript.destroyed)
         {
             timer += Time.deltaTime;
 
