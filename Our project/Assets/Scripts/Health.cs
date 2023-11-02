@@ -11,6 +11,7 @@ public class Health : MonoBehaviour
     public Animator anim;
     [SerializeField] private AudioSource deathSFX;
     [SerializeField] private AudioSource hurtSFX;
+    [SerializeField] private AudioSource finishSound;
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
@@ -19,6 +20,7 @@ public class Health : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
+        finishSound = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -84,6 +86,10 @@ public class Health : MonoBehaviour
         if (other.gameObject.CompareTag("Trap"))
         {
             HandleTrapCollision();
+        }
+        else if(other.gameObject.CompareTag("Finish"))
+        {
+            finishSound.Play();
         }
             //HandleAnotherTrapCollision();
             
