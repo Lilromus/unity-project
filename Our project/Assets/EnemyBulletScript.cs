@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class EnemyBulletScript : MonoBehaviour
 {
     private GameObject player;
+    private BoxCollider2D bulletSize;
     private Rigidbody2D rb;
     private GameObject ground;
     public float force;
@@ -15,6 +16,8 @@ public class EnemyBulletScript : MonoBehaviour
 
     void Start()
     {
+        bulletSize = GetComponent<BoxCollider2D>();
+        bulletSize.size = new Vector2(0.4f, 0.21f);
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
