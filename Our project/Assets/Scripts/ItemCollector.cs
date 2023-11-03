@@ -18,7 +18,7 @@ public class ItemCollector : MonoBehaviour
             Destroy(collision.gameObject);
             CollectSFX.Play();
             apples++;
-            appleText.text = "Apples: " + apples;
+            appleText.text = "Apples: " + apples + "/9";
         }
     }
 }
