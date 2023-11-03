@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,12 +6,19 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
-    // Update is called once per frame
+    public GameManager gameManager; // Reference to the GameManager
+
+    void Start()
+    {
+        // Assign the GameManager reference
+        gameManager = GameObject.FindObjectOfType<GameManager>();
+    }
+
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(GameIsPaused)
+            if (GameIsPaused)
             {
                 Resume();
             }
@@ -23,21 +28,28 @@ public class PauseMenu : MonoBehaviour
             }
         }
     }
+
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+
+        // Call ResumeMusic from the GameManager
+        gameManager.ResumeMusic();
     }
+
     void Pause()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
+
     public void LoadMenu()
     {
         Debug.Log("Loading menu...");
-        SceneManager.LoadScene("Start Scren");
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Start Screen");
     }
 }

@@ -36904,7 +36904,8 @@ Transform:
   m_LocalPosition: {x: 5.51, y: -4.05, z: -0.12699342}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1149638315}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &801158837
@@ -38315,6 +38316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1149638315}
   - component: {fileID: 1149638314}
+  - component: {fileID: 1149638316}
   m_Layer: 0
   m_Name: BackgroundMusic
   m_TagString: Untagged
@@ -38426,13 +38428,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1149638313}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.93, y: 0.32, z: 0.019}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.42, y: 4.3700004, z: 0.14599341}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 801158836}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1149638316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149638313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe8a583ceb52c8144b5464cf9e0ff2c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1212554612
 GameObject:
   m_ObjectHideFlags: 0
@@ -42133,5 +42147,4 @@ SceneRoots:
   - {fileID: 2222533}
   - {fileID: 383813375}
   - {fileID: 801158836}
-  - {fileID: 1149638315}
   - {fileID: 1676992491}
