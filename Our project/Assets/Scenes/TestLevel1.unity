@@ -37849,6 +37849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 196195200}
+  gameManager: {fileID: 0}
 --- !u!4 &1037209595 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 363754428386952384, guid: 7f8934adbb6490641a77c53cec2e4ad4, type: 3}
