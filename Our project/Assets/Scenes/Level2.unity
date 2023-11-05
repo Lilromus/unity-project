@@ -19191,7 +19191,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1149638313
+--- !u!1 &1196166544
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19199,8 +19199,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1149638315}
-  - component: {fileID: 1149638314}
+  - component: {fileID: 1196166547}
+  - component: {fileID: 1196166546}
+  - component: {fileID: 1196166545}
   m_Layer: 0
   m_Name: BackgroundMusic
   m_TagString: Untagged
@@ -19208,13 +19209,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!82 &1149638314
+--- !u!114 &1196166545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196166544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe8a583ceb52c8144b5464cf9e0ff2c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!82 &1196166546
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1149638313}
+  m_GameObject: {fileID: 1196166544}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -19304,16 +19317,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!4 &1149638315
+--- !u!4 &1196166547
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1149638313}
+  m_GameObject: {fileID: 1196166544}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.93, y: 0.32, z: 0.019}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.22, y: -2.4899998, z: 0.018999994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24393,7 +24406,6 @@ SceneRoots:
   - {fileID: 1558861937}
   - {fileID: 462302320}
   - {fileID: 383813375}
-  - {fileID: 1149638315}
   - {fileID: 1624511085}
   - {fileID: 1117024367}
   - {fileID: 698540603}
@@ -24401,3 +24413,4 @@ SceneRoots:
   - {fileID: 1399826380}
   - {fileID: 337779615}
   - {fileID: 982461626}
+  - {fileID: 1196166547}

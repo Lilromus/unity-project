@@ -62,4 +62,3 @@ public class EnemyBulletScript1 : MonoBehaviour
         }
     }
 }
-
