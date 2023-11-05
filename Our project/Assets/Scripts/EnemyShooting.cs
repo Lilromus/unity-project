@@ -8,27 +8,24 @@ public class EnemyShooting : MonoBehaviour
     public Transform bulletPos;
     [SerializeField] private AudioSource shootingSFX;
     private float timer;
-    private GameObject player;
     private Enemy EnemyScript;
-    // Start is called before the first frame update
+
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         EnemyScript = GetComponent<Enemy>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-
-        float distance = Vector2.Distance(transform.position, player.transform.position);
-
-        if (distance < 10 && !EnemyScript.destroyed)
+        // Check if the enemy is not destroyed
+        if (!EnemyScript.destroyed)
         {
             timer += Time.deltaTime;
 
-            if (timer > 2)
+            // Set the shooting interval (e.g., every 2 seconds)
+            float shootingInterval = 2f;
+
+            if (timer > shootingInterval)
             {
                 timer = 0;
                 shoot();
@@ -36,6 +33,7 @@ public class EnemyShooting : MonoBehaviour
             }
         }
     }
+
     void shoot()
     {
         Instantiate(bullet, bulletPos.position, Quaternion.identity);

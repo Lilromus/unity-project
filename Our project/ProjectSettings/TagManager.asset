@@ -9,6 +9,8 @@ TagManager:
   - Heart
   - Ground
   - Bullet
+  - Ground1
+  - Ground2
   layers:
   - Default
   - TransparentFX
